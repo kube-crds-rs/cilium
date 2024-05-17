@@ -73,10 +73,6 @@ for name, sub_crds in crds.items():
             crd["metadata"]["name"].removesuffix(".cilium.io").removeprefix("cilium")
         )
         rust_code = ""
-        if file_name == "middlewares":
-            del crd["spec"]["versions"][0]["schema"]["openAPIV3Schema"]["properties"][
-                "spec"
-            ]["properties"]["plugin"]
         # Save the CRD as a tmp yaml file
         with tempfile.NamedTemporaryFile(mode="w") as f:
             yaml.dump(crd, f)
