@@ -96,8 +96,8 @@ for name, sub_crds in crds.items():
             rust_code = rust_code.stdout.decode("utf-8")
 
         rust_code = rust_code.replace(
-            f"// kopium command: kopium -f {tmp_file} --schema=derived --docs -b --derive=Default --derive=PartialEq",
-            f"// kopium command: kopium -f {file_name}.yml --schema=derived --docs -b --derive=Default --derive=PartialEq",
+            f"// kopium command: kopium -f {tmp_file} --schema=derived --docs -b --derive=Default --derive=PartialEq --smart-derive-elision",
+            f"// kopium command: kopium -f {file_name}.yml --schema=derived --docs -b --derive=Default --derive=PartialEq --smart-derive-elision",
         )
         rust_code = "\n".join(
             [
