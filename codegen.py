@@ -87,6 +87,7 @@ for name, sub_crds in crds.items():
                     "-b",
                     "--derive=Default",
                     "--derive=PartialEq",
+                    "--smart-derive-elision"
                 ],
                 capture_output=True,
             )
