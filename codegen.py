@@ -53,7 +53,7 @@ crds = {}
 # Fetch all CRDs
 for crd in crds_stable:
     r = requests.get(
-        f"https://raw.githubusercontent.com/cilium/cilium/v1.15.5/pkg/k8s/apis/cilium.io/client/crds/v2/{crd}"
+        f"https://raw.githubusercontent.com/cilium/cilium/v1.15.7/pkg/k8s/apis/cilium.io/client/crds/v2/{crd}"
     )
     r.raise_for_status()
     all_crds = yaml.safe_load_all(r.text)
@@ -61,7 +61,7 @@ for crd in crds_stable:
 
 for crd in crds_alpha:
     r = requests.get(
-        f"https://raw.githubusercontent.com/cilium/cilium/v1.15.5/pkg/k8s/apis/cilium.io/client/crds/v2alpha1/{crd}"
+        f"https://raw.githubusercontent.com/cilium/cilium/v1.15.7/pkg/k8s/apis/cilium.io/client/crds/v2alpha1/{crd}"
     )
     r.raise_for_status()
     all_crds = yaml.safe_load_all(r.text)
